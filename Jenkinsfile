@@ -13,7 +13,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                yum -y install unzip
+                sudo yum -y install unzip
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     sshPublisher(
                         failOnError: true,
